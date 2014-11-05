@@ -6,6 +6,7 @@
 package DataSetUp;
 
 import Entity.EmployeeEntity;
+import Entity.EventEntity;
 import Entity.SalaryEntity;
 import java.util.Calendar;
 import javax.annotation.PostConstruct;
@@ -35,10 +36,12 @@ public class dataSetUp {
 
     public void createDatabase(){
         
-        EmployeeEntity e1 = new EmployeeEntity("e1","123","Ms","Consultant","Mengdan","","Zhao",21,"12345678","IT");
-        EmployeeEntity e2 = new EmployeeEntity("e2","123","Ms","BOSS","Shiyu","","Zhang",21,"87654321","IS");
-        EmployeeEntity e3 = new EmployeeEntity("e3","123","Mr","Xiao Di","Hang","","Sun",21,"12345678","Sky");
+        EmployeeEntity superUser = new EmployeeEntity("admin","123","Mr","Big Boss","Super","","Boss",40,"93727960","BOSS");
+        EmployeeEntity e1 = new EmployeeEntity("e1","123","Ms","Consultant","E1","","e1",21,"12345678","IT");
+        EmployeeEntity e2 = new EmployeeEntity("e2","123","Ms","BOSS","E2","","e2",21,"87654321","IS");
+        EmployeeEntity e3 = new EmployeeEntity("e3","123","Mr","Xiao Di","E3","","e3",21,"12345678","Sky");
         
+        em.persist(superUser); em.flush();
         em.persist(e1); em.flush();
         em.persist(e2); em.flush();
         em.persist(e3); em.flush();
@@ -82,6 +85,17 @@ public class dataSetUp {
         
         e3.getSalaryList().add(s7); e3.getSalaryList().add(s8); e3.getSalaryList().add(s9);
         em.persist(e3); em.flush();
+        
+        Calendar c4 = Calendar.getInstance();
+        c4.set(2014, Calendar.DECEMBER, 1, 17, 0,0);
+        Calendar c5 = Calendar.getInstance();
+        c5.set(2014, Calendar.DECEMBER, 1, 19, 0,0);
+        
+        EventEntity event1 = new EventEntity(c4,c5,"exam","SOC or MPSH","IS3261 Exam");
+        
+        em.persist(event1);
+        em.flush();
+        
     }
 
 }

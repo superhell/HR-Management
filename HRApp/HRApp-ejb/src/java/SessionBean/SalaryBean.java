@@ -31,7 +31,7 @@ public class SalaryBean implements SalaryBeanLocal {
     private EntityManager em;
     
     @Override
-    @WebMethod(exclude = true)
+    @WebMethod(operationName = "createSalary")
     public void createSalary(String email,String type,Double amount,Calendar periodMonth){
         EmployeeEntity employee = em.find(EmployeeEntity.class,email);
         SalaryEntity newSalary = new SalaryEntity(type, amount, periodMonth, employee);

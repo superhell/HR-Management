@@ -25,7 +25,11 @@ public class EventEntity implements Serializable {
     private Long id;    
     
     @Temporal(javax.persistence.TemporalType.DATE)
-    private Calendar eventDate;   
+    private Calendar createDate; 
+    @Temporal(javax.persistence.TemporalType.TIMESTAMP)
+    private Calendar startTime;
+    @Temporal(javax.persistence.TemporalType.TIMESTAMP)
+    private Calendar endTime;
     private String eventName;
     private String eventVenue;
     private String eventDescription;
@@ -34,19 +38,37 @@ public class EventEntity implements Serializable {
     
     }
     
-    public EventEntity(Calendar eventDate,String eventName,String eventVenue,String eventDescription){
-        this.eventDate = eventDate;
+    public EventEntity(Calendar startTime,Calendar endTime,String eventName,String eventVenue,String eventDescription){
+        this.createDate = Calendar.getInstance();
+        this.startTime = startTime;
+        this.endTime = endTime;
         this.eventName = eventName;
         this.eventVenue = eventVenue;
         this.eventDescription = eventDescription;
     }
-    
-    public Calendar getEventDate() {
-        return eventDate;
+
+    public Calendar getStartTime() {
+        return startTime;
     }
 
-    public void setEventDate(Calendar eventDate) {
-        this.eventDate = eventDate;
+    public void setStartTime(Calendar startTime) {
+        this.startTime = startTime;
+    }
+
+    public Calendar getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Calendar endTime) {
+        this.endTime = endTime;
+    }
+    
+    public Calendar getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Calendar createDate) {
+        this.createDate = createDate;
     }
 
     public String getEventName() {

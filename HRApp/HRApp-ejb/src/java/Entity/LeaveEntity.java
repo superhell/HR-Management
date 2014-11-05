@@ -27,10 +27,10 @@ public class LeaveEntity implements Serializable {
     
     @Temporal(javax.persistence.TemporalType.DATE)
     private Calendar generatedDate;
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Calendar fromDate;
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Calendar toDate;
+    @Temporal(javax.persistence.TemporalType.TIMESTAMP)
+    private Calendar fromTime;
+    @Temporal(javax.persistence.TemporalType.TIMESTAMP)
+    private Calendar toTime;
     private Integer leaveResult;// 0 not decided yet, 1 for approve, -1 for reject
     private String reason;
     
@@ -40,10 +40,10 @@ public class LeaveEntity implements Serializable {
     public LeaveEntity() {
     }
 
-    public LeaveEntity(Calendar fromDate, Calendar toDate, String reason,EmployeeEntity employee){
+    public LeaveEntity(Calendar fromTime, Calendar toTime, String reason,EmployeeEntity employee){
         this.generatedDate = Calendar.getInstance();
-        this.fromDate = fromDate;
-        this.toDate = toDate;
+        this.fromTime = fromTime;
+        this.toTime = toTime;
         this.reason = reason;
         this.leaveResult = 0;
         this.employee = employee;
@@ -66,20 +66,20 @@ public class LeaveEntity implements Serializable {
         this.generatedDate = generatedDate;
     }
 
-    public Calendar getFromDate() {
-        return fromDate;
+    public Calendar getFromTime() {
+        return fromTime;
     }
 
-    public void setFromDate(Calendar fromDate) {
-        this.fromDate = fromDate;
+    public void setFromTime(Calendar fromTime) {
+        this.fromTime = fromTime;
     }
 
-    public Calendar getToDate() {
-        return toDate;
+    public Calendar getToTime() {
+        return toTime;
     }
 
-    public void setToDate(Calendar toDate) {
-        this.toDate = toDate;
+    public void setToTime(Calendar toTime) {
+        this.toTime = toTime;
     }
 
     public Integer getLeaveResult() {

@@ -32,9 +32,9 @@ public class EventBean implements EventBeanLocal {
     private EntityManager em;
     
     @Override
-    @WebMethod(exclude = true)
-    public void createEvent(Calendar eventDate,String eventName, String eventVenue, String eventDescription){
-        EventEntity newEvent = new EventEntity(eventDate,eventName,eventVenue,eventDescription);
+    @WebMethod(operationName = "createEvent")
+    public void createEvent(Calendar startTime,Calendar endTime,String eventName, String eventVenue, String eventDescription){
+        EventEntity newEvent = new EventEntity(startTime,endTime,eventName,eventVenue,eventDescription);
         em.persist(newEvent);
         em.flush();
     }
@@ -58,7 +58,7 @@ public class EventBean implements EventBeanLocal {
         
         switch(field){
             case "eventDate":
-                event.setEventDate((Calendar)content);
+                event.setCreateDate((Calendar)content);
                 break;
             case "eventName":
                 event.setEventName((String)content);

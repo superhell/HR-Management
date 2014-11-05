@@ -29,7 +29,7 @@ public class EmployeeBean implements EmployeeBeanLocal {
     private EntityManager em;
 
     @Override
-    @WebMethod(exclude = true)
+    @WebMethod(operationName = "createEmployee")
     public Boolean createEmployee(String email, String password, String title, String position, String firstName, String middleName, String lastName, Integer age, String contactNum, String department) {
         if (checkEmail(email)) {
             EmployeeEntity newEmployee = new EmployeeEntity(email, password, title, position, firstName, middleName,
