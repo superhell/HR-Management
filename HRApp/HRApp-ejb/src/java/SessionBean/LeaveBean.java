@@ -36,12 +36,12 @@ public class LeaveBean implements LeaveBeanLocal {
     @WebMethod(operationName = "createLeave")
     public void createLeave(
             @WebParam(name = "email") String email, 
-            @WebParam(name = "fromDate") Calendar fromDate, 
-            @WebParam(name = "toDate") Calendar toDate, 
+            @WebParam(name = "fromTime") Calendar fromTime, 
+            @WebParam(name = "toTime") Calendar toTime, 
             @WebParam(name = "reason") String reason){
         EmployeeEntity employee = em.find(EmployeeEntity.class,email);
         
-        LeaveEntity newLeave = new LeaveEntity(fromDate,toDate,reason,employee);
+        LeaveEntity newLeave = new LeaveEntity(fromTime,toTime,reason,employee);
         em.persist(newLeave);
         em.flush();
         
@@ -70,7 +70,7 @@ public class LeaveBean implements LeaveBeanLocal {
     }
     
     @Override
-    @WebMethod(exclude = true)
+    @WebMethod(operationName = "editLeave")
     public void editLeave(Long leaveId,Integer leaveResult){
         LeaveEntity leave = em.find(LeaveEntity.class,leaveId);
         leave.setLeaveResult(leaveResult);
@@ -79,7 +79,7 @@ public class LeaveBean implements LeaveBeanLocal {
     }
     
     @Override
-    @WebMethod(exclude = true)
+    @WebMethod(operationName = "getAllLeaveRequest")
     public List<LeaveEntity> getAllLeaveRequest(){
         Query q = em.createQuery("SELECT l FROM LeaveEntity l");
         List<LeaveEntity> leaveList = new ArrayList();
@@ -90,6 +90,5 @@ public class LeaveBean implements LeaveBeanLocal {
         }
         return leaveList;
     }
- 
     
 }

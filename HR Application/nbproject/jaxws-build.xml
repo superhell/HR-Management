@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${libs.jaxws21.classpath}"/>
+        </taskdef>
+    </target>
+    <target name="wsimport-client-LoginBean" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/LoginBean"/>
+        <property name="wsdl-LoginBean" location="xml-resources/web-service-references/LoginBean/wsdl/localhost_8080/LoginBeanService/LoginBean.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/LoginBean" destdir="${build.generated.dir}/jax-wsCache/LoginBean" wsdl="${wsdl-LoginBean}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/LoginBeanService/LoginBean?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-LoginBean}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/LoginBean"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/LoginBean">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-LoginBean" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/LoginBean"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/sessionbean"/>
+    </target>
+    <target name="wsimport-client-EmployeeBean" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/EmployeeBean"/>
+        <property name="wsdl-EmployeeBean" location="xml-resources/web-service-references/EmployeeBean/wsdl/localhost_8080/EmployeeBeanService/EmployeeBean.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/EmployeeBean" destdir="${build.generated.dir}/jax-wsCache/EmployeeBean" wsdl="${wsdl-EmployeeBean}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/EmployeeBeanService/EmployeeBean?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-EmployeeBean}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/EmployeeBean"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/EmployeeBean">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-EmployeeBean" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/EmployeeBean"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/sessionbean"/>
+    </target>
+    <target name="wsimport-client-SalaryBean" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/SalaryBean"/>
+        <property name="wsdl-SalaryBean" location="xml-resources/web-service-references/SalaryBean/wsdl/localhost_8080/SalaryBeanService/SalaryBean.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/SalaryBean" destdir="${build.generated.dir}/jax-wsCache/SalaryBean" wsdl="${wsdl-SalaryBean}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/SalaryBeanService/SalaryBean?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-SalaryBean}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/SalaryBean"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/SalaryBean">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-SalaryBean" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/SalaryBean"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/sessionbean"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-LoginBean, wsimport-client-EmployeeBean, wsimport-client-SalaryBean"/>
+</project>

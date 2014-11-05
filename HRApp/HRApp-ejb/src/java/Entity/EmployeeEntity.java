@@ -12,12 +12,16 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
  * @author hangsun
  */
 @Entity
+@XmlAccessorType(value = XmlAccessType.FIELD)
 public class EmployeeEntity implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -34,12 +38,15 @@ public class EmployeeEntity implements Serializable {
     private String department;
     
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "employee")
+    @XmlTransient
     private List<SalaryEntity> salaryList = new ArrayList();
     
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "employee")
+    @XmlTransient
     private List<LeaveEntity> leaveList = new ArrayList();
     
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "employee")
+    @XmlTransient
     private List<CheckInEntity> checkInList = new ArrayList();
 
     public EmployeeEntity() {

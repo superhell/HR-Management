@@ -17,7 +17,7 @@ import javax.ejb.Local;
 @Local
 public interface EventBeanLocal {
 
-    public void createEvent(Calendar eventDate, String eventName, String eventVenue, String eventDescription);
+    public void createEvent(Calendar startTime,Calendar endTime, String eventName, String eventVenue, String eventDescription);
 
     public List<EventEntity> getAllEvent();
     
