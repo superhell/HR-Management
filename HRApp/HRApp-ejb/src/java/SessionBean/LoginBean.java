@@ -33,12 +33,12 @@ public class LoginBean implements LoginBeanLocal {
             @WebParam(name = "password") String password) {
         EmployeeEntity employee = em.find(EmployeeEntity.class, email);
         if (employee == null) {
-            return -1;
+            return -1; //user not found
         } else {
             if (employee.getPassword().equals(password)) {
-                return 1;
+                return 1; //user login successful
             } else {
-                return 0;
+                return 0; //password incorrect
             }
         }
     }

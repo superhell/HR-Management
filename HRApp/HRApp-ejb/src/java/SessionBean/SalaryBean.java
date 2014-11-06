@@ -48,7 +48,7 @@ public class SalaryBean implements SalaryBeanLocal {
     
     @WebMethod(operationName = "viewSalary")
     public List<SalaryEntity> viewSalary(
-            @WebParam(name = "email") String email){
+            @WebParam(name = "userId") String email){
         
         EmployeeEntity employee = em.find(EmployeeEntity.class,email);
         

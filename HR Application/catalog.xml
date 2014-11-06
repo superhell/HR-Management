@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
-    <system systemId="http://localhost:8080/LoginBeanService/LoginBean?wsdl" uri="xml-resources/web-service-references/LoginBean/wsdl/localhost_8080/LoginBeanService/LoginBean.wsdl"/>
-    <system systemId="http://localhost:8080/LoginBeanService/LoginBean?xsd=1" uri="xml-resources/web-service-references/LoginBean/wsdl/localhost_8080/LoginBeanService/LoginBean.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/EmployeeBeanService/EmployeeBean?wsdl" uri="xml-resources/web-service-references/EmployeeBean/wsdl/localhost_8080/EmployeeBeanService/EmployeeBean.wsdl"/>
     <system systemId="http://localhost:8080/EmployeeBeanService/EmployeeBean?xsd=1" uri="xml-resources/web-service-references/EmployeeBean/wsdl/localhost_8080/EmployeeBeanService/EmployeeBean.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/SalaryBeanService/SalaryBean?wsdl" uri="xml-resources/web-service-references/SalaryBean/wsdl/localhost_8080/SalaryBeanService/SalaryBean.wsdl"/>
@@ -14,4 +12,6 @@
     <system systemId="http://localhost:8080/CheckInBeanService/CheckInBean?xsd=1" uri="xml-resources/web-service-references/CheckInBean/wsdl/localhost_8080/CheckInBeanService/CheckInBean.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/QRBeanService/QRBean?wsdl" uri="xml-resources/web-service-references/QRBean/wsdl/localhost_8080/QRBeanService/QRBean.wsdl"/>
     <system systemId="http://localhost:8080/QRBeanService/QRBean?xsd=1" uri="xml-resources/web-service-references/QRBean/wsdl/localhost_8080/QRBeanService/QRBean.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/LoginBeanService/LoginBean?wsdl" uri="xml-resources/web-service-references/LoginBean_1/wsdl/localhost_8080/LoginBeanService/LoginBean.wsdl"/>
+    <system systemId="http://localhost:8080/LoginBeanService/LoginBean?xsd=1" uri="xml-resources/web-service-references/LoginBean_1/wsdl/localhost_8080/LoginBeanService/LoginBean.xsd_1.xsd"/>
 </catalog>

@@ -10,8 +10,13 @@ import Entity.EmployeeEntity;
 import Entity.EventEntity;
 import Entity.LeaveEntity;
 import Entity.SalaryEntity;
+import java.io.File;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.Calendar;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
 import javax.ejb.LocalBean;
 import javax.ejb.Singleton;
@@ -37,11 +42,20 @@ public class dataSetUp {
     }
 
     public void createDatabase() {
+
         //employee Entity
-        EmployeeEntity superUser = new EmployeeEntity("admin", "123", "Mr", "Admin", "Super", "", "Admin", 40, "93727960", "God");
-        EmployeeEntity e1 = new EmployeeEntity("e1", "123", "Ms", "Consultant", "EMPLOYEE1", "", "employee1", 25, "12345678", "SOC");
-        EmployeeEntity e2 = new EmployeeEntity("e2", "123", "Ms", "Manager", "EMPLOYEE2", "", "employee2", 23, "87654321", "SCI");
-        EmployeeEntity e3 = new EmployeeEntity("e3", "123", "Mr", "Entertainment Leader", "EMPLOYEE3", "", "employee3", 21, "12345678", "ENG");
+        URL url = getClass().getResource("/Resources/sample.JPG");
+        File image = null;
+        try {
+            image = new File(url.toURI());
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(dataSetUp.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        EmployeeEntity superUser = new EmployeeEntity("admin", "123", "Mr", "Admin", "Super", "", "Admin", 40, "93727960", "God",image);
+        EmployeeEntity e1 = new EmployeeEntity("e1", "123", "Ms", "Consultant", "EMPLOYEE1", "", "employee1", 25, "12345678", "SOC",image);
+        EmployeeEntity e2 = new EmployeeEntity("e2", "123", "Ms", "Manager", "EMPLOYEE2", "", "employee2", 23, "87654321", "SCI",image);
+        EmployeeEntity e3 = new EmployeeEntity("e3", "123", "Mr", "Entertainment Leader", "EMPLOYEE3", "", "employee3", 21, "12345678", "ENG",image);
 
         em.persist(superUser);
         em.flush();
@@ -196,7 +210,7 @@ public class dataSetUp {
         e1.setCheckInList(checkInList1);
         em.persist(e1);
         em.flush();
-        
+
         List<CheckInEntity> checkInList2 = e2.getCheckInList();
         checkInList2.add(checkIn8);
         checkInList2.add(checkIn7);

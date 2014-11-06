@@ -1,6 +1,19 @@
+<<<<<<< HEAD
+/HRApp/HRApp-ejb/dist/
+/HRApp/HRApp-ejb/build/
+/HRApp/HRApp-war/build/
+/HRApp/dist/
+/HRApp/build/
+=======
 /HRApp/HRApp-war/build/
 /HRApp/build/
 /HRApp/HRApp-ejb/dist/
+<<<<<<< HEAD
+>>>>>>> dbf4cf38e52f383dab6d1076638bb9287885a58f
+/HRApp/HRApp-war/dist/
+=======
 /HRApp/HRApp-war/dist/
 /HR Application/nbproject/private/
 /HR Application/build/
+>>>>>>> 62a42ad13e059e5926778612cf071d096ebe27e5
+/HR Application/dist/
