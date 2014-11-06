@@ -5,6 +5,8 @@
  */
 package SessionBean;
 
+import Entity.EmployeeEntity;
+import java.io.File;
 import javax.ejb.Local;
 
 /**
@@ -17,7 +19,13 @@ public interface EmployeeBeanLocal {
     public Boolean editEmployee(String email, String field, Object content);
 
     public Boolean createEmployee(String email, String password, String title, String position,
-            String firstName, String middleName, String lastName, Integer age, String contactNum, String department);
+            String firstName, String middleName, String lastName, Integer age, String contactNum, String department, File photo);
 
     public Boolean checkEmail(String email);
+    
+    public String[] getEmployeeInfo(String userId);
+    
+    public String getEmployeeImage(File imageFile);
+    
+    public String[][] getContacts();
 }

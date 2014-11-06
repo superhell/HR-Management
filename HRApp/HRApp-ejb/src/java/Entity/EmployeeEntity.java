@@ -5,6 +5,8 @@
  */
 package Entity;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +38,7 @@ public class EmployeeEntity implements Serializable {
     private Integer age;
     private String contactNum;
     private String department;
+    private File photo;
     
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "employee")
     @XmlTransient
@@ -52,7 +55,8 @@ public class EmployeeEntity implements Serializable {
     public EmployeeEntity() {
     }
     
-    public EmployeeEntity(String email,String password,String title,String position,String firstName,String middleName,String lastName,Integer age,String contactNum,String department){
+    public EmployeeEntity(String email,String password,String title,String position,String firstName,
+            String middleName,String lastName,Integer age,String contactNum,String department, File photo){
         this.email = email;
         this.password = password;
         this.title = title;
@@ -62,7 +66,8 @@ public class EmployeeEntity implements Serializable {
         this.lastName = lastName;
         this.age = age;
         this.contactNum = contactNum;
-        this.department = department;             
+        this.department = department;  
+        this.photo = photo;
     }
 
     public List<CheckInEntity> getCheckInList() {
@@ -173,6 +178,15 @@ public class EmployeeEntity implements Serializable {
         this.email = email;
     }
 
+    public File getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(File photo) {
+        this.photo = photo;
+    }
+
+    
     @Override
     public int hashCode() {
         int hash = 0;

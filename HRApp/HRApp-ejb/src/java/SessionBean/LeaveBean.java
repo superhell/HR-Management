@@ -35,7 +35,7 @@ public class LeaveBean implements LeaveBeanLocal {
     
     @WebMethod(operationName = "createLeave")
     public void createLeave(
-            @WebParam(name = "email") String email, 
+            @WebParam(name = "userId") String email, 
             @WebParam(name = "fromTime") Calendar fromTime, 
             @WebParam(name = "toTime") Calendar toTime, 
             @WebParam(name = "reason") String reason){
@@ -56,7 +56,7 @@ public class LeaveBean implements LeaveBeanLocal {
     
     @WebMethod(operationName = "viewLeaveHistory")
     public List<LeaveEntity> viewLeaveHistory(
-            @WebParam(name = "email") String email){
+            @WebParam(name = "userId") String email){
         EmployeeEntity employee = em.find(EmployeeEntity.class,email);
         
         return employee.getLeaveList();

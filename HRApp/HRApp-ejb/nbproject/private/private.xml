@@ -3,6 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group/>
-        <group name="IslandFurniture"/>
+        <group name="IslandFurniture">
+            <file>file:/Users/dan/Desktop/HR-Management/HRApp/HRApp-ejb/setup/sun-resources.xml</file>
+            <file>file:/Users/dan/Desktop/HR-Management/HRApp/HRApp-ejb/src/conf/persistence.xml</file>
+            <file>file:/Users/dan/Desktop/HR-Management/HRApp/HRApp-ejb/src/java/DataSetUp/dataSetUp.java</file>
+            <file>file:/Users/dan/Desktop/HR-Management/HRApp/HRApp-ejb/src/java/SessionBean/EmployeeBean.java</file>
+            <file>file:/Users/dan/Desktop/HR-Management/HRApp/HRApp-ejb/src/java/SessionBean/EmployeeBeanLocal.java</file>
+            <file>file:/Users/dan/Desktop/HR-Management/HRApp/HRApp-ejb/src/java/Entity/EmployeeEntity.java</file>
+        </group>
     </open-files>
 </project-private>
