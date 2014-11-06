@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://SessionBean/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://SessionBean/">
+
+<xs:element name="createEvent" type="tns:createEvent"/>
+
+<xs:element name="createEventResponse" type="tns:createEventResponse"/>
+
+<xs:element name="getAllEvent" type="tns:getAllEvent"/>
+
+<xs:element name="getAllEventResponse" type="tns:getAllEventResponse"/>
+
+<xs:complexType name="getAllEvent">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getAllEventResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:eventEntity" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eventEntity">
+<xs:sequence>
+<xs:element name="createDate" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="endTime" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="eventDescription" type="xs:string" minOccurs="0"/>
+<xs:element name="eventName" type="xs:string" minOccurs="0"/>
+<xs:element name="eventVenue" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="startTime" type="xs:dateTime" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createEvent">
+<xs:sequence>
+<xs:element name="arg0" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="arg1" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="arg2" type="xs:string" minOccurs="0"/>
+<xs:element name="arg3" type="xs:string" minOccurs="0"/>
+<xs:element name="arg4" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createEventResponse">
+<xs:sequence/>
+</xs:complexType>
+</xs:schema>

@@ -67,5 +67,73 @@
         <delete dir="${build.generated.dir}/jax-wsCache/SalaryBean"/>
         <delete dir="${build.generated.sources.dir}/jax-ws/sessionbean"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-LoginBean, wsimport-client-EmployeeBean, wsimport-client-SalaryBean"/>
+    <target name="wsimport-client-EventBean" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/EventBean"/>
+        <property name="wsdl-EventBean" location="xml-resources/web-service-references/EventBean/wsdl/localhost_8080/EventBeanService/EventBean.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/EventBean" destdir="${build.generated.dir}/jax-wsCache/EventBean" wsdl="${wsdl-EventBean}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/EventBeanService/EventBean?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-EventBean}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/EventBean"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/EventBean">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-EventBean" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/EventBean"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/sessionbean"/>
+    </target>
+    <target name="wsimport-client-LeaveBean" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/LeaveBean"/>
+        <property name="wsdl-LeaveBean" location="xml-resources/web-service-references/LeaveBean/wsdl/localhost_8080/LeaveBeanService/LeaveBean.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/LeaveBean" destdir="${build.generated.dir}/jax-wsCache/LeaveBean" wsdl="${wsdl-LeaveBean}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/LeaveBeanService/LeaveBean?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-LeaveBean}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/LeaveBean"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/LeaveBean">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-LeaveBean" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/LeaveBean"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/sessionbean"/>
+    </target>
+    <target name="wsimport-client-CheckInBean" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/CheckInBean"/>
+        <property name="wsdl-CheckInBean" location="xml-resources/web-service-references/CheckInBean/wsdl/localhost_8080/CheckInBeanService/CheckInBean.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/CheckInBean" destdir="${build.generated.dir}/jax-wsCache/CheckInBean" wsdl="${wsdl-CheckInBean}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/CheckInBeanService/CheckInBean?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-CheckInBean}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/CheckInBean"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/CheckInBean">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-CheckInBean" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/CheckInBean"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/sessionbean"/>
+    </target>
+    <target name="wsimport-client-QRBean" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/QRBean"/>
+        <property name="wsdl-QRBean" location="xml-resources/web-service-references/QRBean/wsdl/localhost_8080/QRBeanService/QRBean.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/QRBean" destdir="${build.generated.dir}/jax-wsCache/QRBean" wsdl="${wsdl-QRBean}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/QRBeanService/QRBean?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-QRBean}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/QRBean"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/QRBean">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-QRBean" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/QRBean"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/sessionbean"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-LoginBean, wsimport-client-EmployeeBean, wsimport-client-SalaryBean, wsimport-client-EventBean, wsimport-client-LeaveBean, wsimport-client-CheckInBean, wsimport-client-QRBean"/>
 </project>

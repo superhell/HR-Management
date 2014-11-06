@@ -5,6 +5,20 @@
  */
 package hr.application;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
+
 /**
  *
  * @author hangsun
@@ -27,21 +41,306 @@ public class CreateNewEvent extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jButtonGoBack = new javax.swing.JButton();
+        jTextFieldEventName = new javax.swing.JTextField();
+        jTextFieldVenue = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextAreaDescription = new javax.swing.JTextArea();
+        jButtonCreate = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jFormattedTextFieldEventDate = new javax.swing.JFormattedTextField();
+        jComboBoxStartTime = new javax.swing.JComboBox();
+        jComboBoxEndTime = new javax.swing.JComboBox();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel2.setBackground(new java.awt.Color(72, 117, 180));
+
+        jLabel1.setFont(new java.awt.Font("Times", 3, 36)); // NOI18N
+        jLabel1.setText("                   HR Management");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel2.setFont(new java.awt.Font("Times", 3, 18)); // NOI18N
+        jLabel2.setText("Start Time:");
+
+        jLabel3.setFont(new java.awt.Font("Times", 3, 18)); // NOI18N
+        jLabel3.setText("End Time:");
+
+        jLabel4.setFont(new java.awt.Font("Times", 3, 18)); // NOI18N
+        jLabel4.setText("Event Name:");
+
+        jLabel5.setFont(new java.awt.Font("Times", 3, 18)); // NOI18N
+        jLabel5.setText("Venue:");
+
+        jLabel6.setFont(new java.awt.Font("Times", 3, 18)); // NOI18N
+        jLabel6.setText("Event Description:");
+
+        jButtonGoBack.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonGoBack.setFont(new java.awt.Font("Times", 3, 18)); // NOI18N
+        jButtonGoBack.setText("Go Back");
+        jButtonGoBack.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButtonGoBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonGoBackActionPerformed(evt);
+            }
+        });
+
+        jTextFieldEventName.setFont(new java.awt.Font("Times", 3, 18)); // NOI18N
+        jTextFieldEventName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldEventNameActionPerformed(evt);
+            }
+        });
+
+        jTextFieldVenue.setFont(new java.awt.Font("Times", 3, 18)); // NOI18N
+        jTextFieldVenue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldVenueActionPerformed(evt);
+            }
+        });
+
+        jTextAreaDescription.setColumns(15);
+        jTextAreaDescription.setFont(new java.awt.Font("Times", 3, 18)); // NOI18N
+        jTextAreaDescription.setRows(5);
+        jScrollPane1.setViewportView(jTextAreaDescription);
+
+        jButtonCreate.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonCreate.setFont(new java.awt.Font("Times", 3, 24)); // NOI18N
+        jButtonCreate.setText("Create!");
+        jButtonCreate.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButtonCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCreateActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setFont(new java.awt.Font("Times", 3, 18)); // NOI18N
+        jLabel7.setText("Event Date:");
+
+        jFormattedTextFieldEventDate.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd-MM-yyyy"))));
+        jFormattedTextFieldEventDate.setFont(new java.awt.Font("Times", 3, 18)); // NOI18N
+        jFormattedTextFieldEventDate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextFieldEventDateActionPerformed(evt);
+            }
+        });
+
+        jComboBoxStartTime.setFont(new java.awt.Font("Times", 3, 18)); // NOI18N
+        jComboBoxStartTime.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "00:00:00", "00:30:00", "01:00:00", "01:30:00", "02:00:00", "02:30:00", "03:00:00", "03:30:00", "04:00:00", "04:30:00", "05:00:00", "05:30:00", "06:00:00", "06:30:00", "07:00:00", "07:30:00", "08:00:00", "08:30:00", "09:00:00", "09:30:00", "10:00:00", "10:30:00", "11:00:00", "11:30:00", "12:00:00", "12:30:00", "13:00:00", "13:30:00", "14:00:00", "14:30:00", "15:00:00", "15:30:00", "16:00:00", "16:30:00", "17:00:00", "17:30:00", "18:00:00", "18:30:00", "19:00:00", "19:30:00", "20:00:00", "20:30:00", "21:00:00", "21:30:00", "22:00:00", "22:30:00", "23:00:00", "23:30:00", " ", " ", " ", " " }));
+        jComboBoxStartTime.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxStartTimeActionPerformed(evt);
+            }
+        });
+
+        jComboBoxEndTime.setFont(new java.awt.Font("Times", 3, 18)); // NOI18N
+        jComboBoxEndTime.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "00:00:00", "00:30:00", "01:00:00", "01:30:00", "02:00:00", "02:30:00", "03:00:00", "03:30:00", "04:00:00", "04:30:00", "05:00:00", "05:30:00", "06:00:00", "06:30:00", "07:00:00", "07:30:00", "08:00:00", "08:30:00", "09:00:00", "09:30:00", "10:00:00", "10:30:00", "11:00:00", "11:30:00", "12:00:00", "12:30:00", "13:00:00", "13:30:00", "14:00:00", "14:30:00", "15:00:00", "15:30:00", "16:00:00", "16:30:00", "17:00:00", "17:30:00", "18:00:00", "18:30:00", "19:00:00", "19:30:00", "20:00:00", "20:30:00", "21:00:00", "21:30:00", "22:00:00", "22:30:00", "23:00:00", "23:30:00", " ", " ", " ", " " }));
+        jComboBoxEndTime.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxEndTimeActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButtonGoBack, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jFormattedTextFieldEventDate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldVenue, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBoxStartTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBoxEndTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonCreate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(12, 12, 12)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextFieldEventName, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel6)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(jTextFieldEventName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6)))
+                    .addComponent(jButtonGoBack))
+                .addGap(12, 12, 12)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(jTextFieldVenue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jFormattedTextFieldEventDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7))
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(jComboBoxStartTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(jComboBoxEndTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane1))
+                .addGap(18, 18, 18)
+                .addComponent(jButtonCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonGoBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGoBackActionPerformed
+        // TODO add your handling code here:
+        Menu menu = new Menu();
+        menu.setVisible(true);
+        menu.setExtendedState(JFrame.NORMAL);
+        this.setVisible(false);
+        this.dispose();
+    }//GEN-LAST:event_jButtonGoBackActionPerformed
+
+    private void jTextFieldEventNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEventNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldEventNameActionPerformed
+
+    private void jFormattedTextFieldEventDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldEventDateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextFieldEventDateActionPerformed
+
+    private void jComboBoxStartTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxStartTimeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxStartTimeActionPerformed
+
+    private void jComboBoxEndTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxEndTimeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxEndTimeActionPerformed
+
+    private void jTextFieldVenueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldVenueActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldVenueActionPerformed
+
+    private void jButtonCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCreateActionPerformed
+        // TODO add your handling code here:
+        try {
+            String eventName = jTextFieldEventName.getText();
+            String eventVenue = jTextFieldVenue.getText();
+            String eventDescription = jTextAreaDescription.getText();
+            String eventDate = jFormattedTextFieldEventDate.getText();
+            String startTime = (String) jComboBoxStartTime.getSelectedItem();
+            String endTime = (String) jComboBoxEndTime.getSelectedItem();
+
+            if (eventName == null || eventVenue == null || eventDescription == null || eventDate == null) {
+                JOptionPane.showMessageDialog(this, "All Field Must Not Be Empty!", "Creation Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                DateFormat formatter1 = new SimpleDateFormat("dd-MM-yyyy");
+                DateFormat formatter2 = new SimpleDateFormat("HH:mm:ss");
+                Date Date1 = formatter1.parse(eventDate);
+                Date start = formatter2.parse(startTime);
+                Date end = formatter2.parse(endTime);
+                
+                Calendar temp = Calendar.getInstance();
+                temp.setTime(start);
+                int startHour = temp.get(Calendar.HOUR_OF_DAY);
+                int startMin = temp.get(Calendar.MINUTE);
+                int startSecond = temp.get(Calendar.SECOND);
+                
+                temp.setTime(end);
+                int endHour = temp.get(Calendar.HOUR_OF_DAY);
+                int endMin = temp.get(Calendar.MINUTE);
+                int endSecond = temp.get(Calendar.SECOND);
+                
+                Calendar StartTime = Calendar.getInstance();
+                StartTime.setTime(Date1);
+                StartTime.set(Calendar.HOUR_OF_DAY, startHour);
+                StartTime.set(Calendar.MINUTE, startMin);
+                StartTime.set(Calendar.SECOND, startSecond);
+                Calendar EndTime = Calendar.getInstance();
+                EndTime.setTime(Date1);
+                EndTime.set(Calendar.HOUR_OF_DAY, endHour);
+                EndTime.set(Calendar.MINUTE, endMin);
+                EndTime.set(Calendar.SECOND, endSecond);
+                           
+                GregorianCalendar gc1 = new GregorianCalendar();
+                gc1.setTimeInMillis(StartTime.getTimeInMillis());
+                XMLGregorianCalendar Start = DatatypeFactory.newInstance().newXMLGregorianCalendar(gc1);
+                
+                GregorianCalendar gc2 = new GregorianCalendar();
+                gc2.setTimeInMillis(EndTime.getTimeInMillis());
+                XMLGregorianCalendar End = DatatypeFactory.newInstance().newXMLGregorianCalendar(gc2);
+                
+                createEvent(Start,End,eventName,eventVenue,eventDescription);
+                JOptionPane.showMessageDialog(this, "Create Event Successfully!", "Successful", JOptionPane.INFORMATION_MESSAGE);
+            }
+        } catch (ParseException ex) {
+            Logger.getLogger(CreateNewEvent.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (DatatypeConfigurationException ex) {
+            Logger.getLogger(CreateNewEvent.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButtonCreateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -80,5 +379,29 @@ public class CreateNewEvent extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonCreate;
+    private javax.swing.JButton jButtonGoBack;
+    private javax.swing.JComboBox jComboBoxEndTime;
+    private javax.swing.JComboBox jComboBoxStartTime;
+    private javax.swing.JFormattedTextField jFormattedTextFieldEventDate;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextAreaDescription;
+    private javax.swing.JTextField jTextFieldEventName;
+    private javax.swing.JTextField jTextFieldVenue;
     // End of variables declaration//GEN-END:variables
+
+    private static void createEvent(javax.xml.datatype.XMLGregorianCalendar arg0, javax.xml.datatype.XMLGregorianCalendar arg1, java.lang.String arg2, java.lang.String arg3, java.lang.String arg4) {
+        sessionbean.EventBeanService service = new sessionbean.EventBeanService();
+        sessionbean.EventBean port = service.getEventBeanPort();
+        port.createEvent(arg0, arg1, arg2, arg3, arg4);
+    }
 }

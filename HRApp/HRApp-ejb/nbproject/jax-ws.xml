@@ -19,6 +19,9 @@
     <service name="EventBean">
       <implementation-class>SessionBean.EventBean</implementation-class>
     </service>
+    <service name="QRBean">
+      <implementation-class>SessionBean.QRBean</implementation-class>
+    </service>
   </services>
   <clients/>
 </jax-ws>

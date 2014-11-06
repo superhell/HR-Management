@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -23,13 +23,426 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
+          <Component id="jPanel2" max="32767" attributes="0"/>
+          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel1" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanel2">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="b4" green="75" red="48" type="rgb"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Component id="jLabel1" min="-2" pref="68" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times" size="36" style="3"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="                   HR Management"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Component id="jButtonGoBack" min="-2" pref="97" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="45" pref="45" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace pref="20" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jFormattedTextFieldEventDate" alignment="1" min="-2" pref="185" max="-2" attributes="0"/>
+                              <Component id="jTextFieldVenue" alignment="1" min="-2" pref="185" max="-2" attributes="0"/>
+                              <Component id="jComboBoxStartTime" min="-2" max="-2" attributes="0"/>
+                              <Component id="jComboBoxEndTime" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jButtonCreate" alignment="1" min="-2" pref="86" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                          <Component id="jScrollPane1" min="-2" pref="223" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jTextFieldEventName" min="-2" pref="185" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTextFieldEventName" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Component id="jButtonGoBack" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTextFieldVenue" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jFormattedTextFieldEventDate" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jComboBoxStartTime" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="24" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jComboBoxEndTime" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Component id="jScrollPane1" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="jButtonCreate" min="-2" pref="71" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times" size="18" style="3"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Start Time:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel3">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times" size="18" style="3"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="End Time:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel4">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times" size="18" style="3"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Event Name:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel5">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times" size="18" style="3"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Venue:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel6">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times" size="18" style="3"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Event Description:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonGoBack">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times" size="18" style="3"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Go Back"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                <BevelBorder/>
+              </Border>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonGoBackActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldEventName">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times" size="18" style="3"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldEventNameActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldVenue">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times" size="18" style="3"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldVenueActionPerformed"/>
+          </Events>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTextArea" name="jTextAreaDescription">
+              <Properties>
+                <Property name="columns" type="int" value="15"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Times" size="18" style="3"/>
+                </Property>
+                <Property name="rows" type="int" value="5"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JButton" name="jButtonCreate">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times" size="24" style="3"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Create!"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                <BevelBorder/>
+              </Border>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCreateActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel7">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times" size="18" style="3"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Event Date:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JFormattedTextField" name="jFormattedTextFieldEventDate">
+          <Properties>
+            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+              <Format format="dd-MM-yyyy" subtype="-1" type="1"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times" size="18" style="3"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFormattedTextFieldEventDateActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBoxStartTime">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times" size="18" style="3"/>
+            </Property>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="52">
+                <StringItem index="0" value="00:00:00"/>
+                <StringItem index="1" value="00:30:00"/>
+                <StringItem index="2" value="01:00:00"/>
+                <StringItem index="3" value="01:30:00"/>
+                <StringItem index="4" value="02:00:00"/>
+                <StringItem index="5" value="02:30:00"/>
+                <StringItem index="6" value="03:00:00"/>
+                <StringItem index="7" value="03:30:00"/>
+                <StringItem index="8" value="04:00:00"/>
+                <StringItem index="9" value="04:30:00"/>
+                <StringItem index="10" value="05:00:00"/>
+                <StringItem index="11" value="05:30:00"/>
+                <StringItem index="12" value="06:00:00"/>
+                <StringItem index="13" value="06:30:00"/>
+                <StringItem index="14" value="07:00:00"/>
+                <StringItem index="15" value="07:30:00"/>
+                <StringItem index="16" value="08:00:00"/>
+                <StringItem index="17" value="08:30:00"/>
+                <StringItem index="18" value="09:00:00"/>
+                <StringItem index="19" value="09:30:00"/>
+                <StringItem index="20" value="10:00:00"/>
+                <StringItem index="21" value="10:30:00"/>
+                <StringItem index="22" value="11:00:00"/>
+                <StringItem index="23" value="11:30:00"/>
+                <StringItem index="24" value="12:00:00"/>
+                <StringItem index="25" value="12:30:00"/>
+                <StringItem index="26" value="13:00:00"/>
+                <StringItem index="27" value="13:30:00"/>
+                <StringItem index="28" value="14:00:00"/>
+                <StringItem index="29" value="14:30:00"/>
+                <StringItem index="30" value="15:00:00"/>
+                <StringItem index="31" value="15:30:00"/>
+                <StringItem index="32" value="16:00:00"/>
+                <StringItem index="33" value="16:30:00"/>
+                <StringItem index="34" value="17:00:00"/>
+                <StringItem index="35" value="17:30:00"/>
+                <StringItem index="36" value="18:00:00"/>
+                <StringItem index="37" value="18:30:00"/>
+                <StringItem index="38" value="19:00:00"/>
+                <StringItem index="39" value="19:30:00"/>
+                <StringItem index="40" value="20:00:00"/>
+                <StringItem index="41" value="20:30:00"/>
+                <StringItem index="42" value="21:00:00"/>
+                <StringItem index="43" value="21:30:00"/>
+                <StringItem index="44" value="22:00:00"/>
+                <StringItem index="45" value="22:30:00"/>
+                <StringItem index="46" value="23:00:00"/>
+                <StringItem index="47" value="23:30:00"/>
+                <StringItem index="48" value=" "/>
+                <StringItem index="49" value=" "/>
+                <StringItem index="50" value=" "/>
+                <StringItem index="51" value=" "/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxStartTimeActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBoxEndTime">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times" size="18" style="3"/>
+            </Property>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="52">
+                <StringItem index="0" value="00:00:00"/>
+                <StringItem index="1" value="00:30:00"/>
+                <StringItem index="2" value="01:00:00"/>
+                <StringItem index="3" value="01:30:00"/>
+                <StringItem index="4" value="02:00:00"/>
+                <StringItem index="5" value="02:30:00"/>
+                <StringItem index="6" value="03:00:00"/>
+                <StringItem index="7" value="03:30:00"/>
+                <StringItem index="8" value="04:00:00"/>
+                <StringItem index="9" value="04:30:00"/>
+                <StringItem index="10" value="05:00:00"/>
+                <StringItem index="11" value="05:30:00"/>
+                <StringItem index="12" value="06:00:00"/>
+                <StringItem index="13" value="06:30:00"/>
+                <StringItem index="14" value="07:00:00"/>
+                <StringItem index="15" value="07:30:00"/>
+                <StringItem index="16" value="08:00:00"/>
+                <StringItem index="17" value="08:30:00"/>
+                <StringItem index="18" value="09:00:00"/>
+                <StringItem index="19" value="09:30:00"/>
+                <StringItem index="20" value="10:00:00"/>
+                <StringItem index="21" value="10:30:00"/>
+                <StringItem index="22" value="11:00:00"/>
+                <StringItem index="23" value="11:30:00"/>
+                <StringItem index="24" value="12:00:00"/>
+                <StringItem index="25" value="12:30:00"/>
+                <StringItem index="26" value="13:00:00"/>
+                <StringItem index="27" value="13:30:00"/>
+                <StringItem index="28" value="14:00:00"/>
+                <StringItem index="29" value="14:30:00"/>
+                <StringItem index="30" value="15:00:00"/>
+                <StringItem index="31" value="15:30:00"/>
+                <StringItem index="32" value="16:00:00"/>
+                <StringItem index="33" value="16:30:00"/>
+                <StringItem index="34" value="17:00:00"/>
+                <StringItem index="35" value="17:30:00"/>
+                <StringItem index="36" value="18:00:00"/>
+                <StringItem index="37" value="18:30:00"/>
+                <StringItem index="38" value="19:00:00"/>
+                <StringItem index="39" value="19:30:00"/>
+                <StringItem index="40" value="20:00:00"/>
+                <StringItem index="41" value="20:30:00"/>
+                <StringItem index="42" value="21:00:00"/>
+                <StringItem index="43" value="21:30:00"/>
+                <StringItem index="44" value="22:00:00"/>
+                <StringItem index="45" value="22:30:00"/>
+                <StringItem index="46" value="23:00:00"/>
+                <StringItem index="47" value="23:30:00"/>
+                <StringItem index="48" value=" "/>
+                <StringItem index="49" value=" "/>
+                <StringItem index="50" value=" "/>
+                <StringItem index="51" value=" "/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxEndTimeActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
 </Form>
