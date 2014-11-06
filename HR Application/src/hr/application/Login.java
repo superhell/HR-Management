@@ -239,4 +239,6 @@ public class Login extends javax.swing.JFrame {
         sessionbean.LoginBean port = service.getLoginBeanPort();
         return port.login(email, password);
     }
+
+    
 }
