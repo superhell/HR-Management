@@ -11,6 +11,7 @@ import com.google.zxing.qrcode.decoder.Mode;
 import eg.com.tm.barcode.processor.BarcodeEngine;
 import eg.com.tm.barcode.processor.config.EncodeConfig;
 import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.logging.Level;
@@ -27,6 +28,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * @author hangsun
  */
 public class CheckAttendanceMenu extends javax.swing.JFrame {
+
+    Calendar date = null;
+    String fileName = null;
 
     /**
      * Creates new form CheckAttendance
@@ -57,6 +61,9 @@ public class CheckAttendanceMenu extends javax.swing.JFrame {
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
+            }
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
             }
         });
 
@@ -190,7 +197,7 @@ public class CheckAttendanceMenu extends javax.swing.JFrame {
 
     private void jButtonGenerateQRCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGenerateQRCodeActionPerformed
         // TODO add your handling code here:
-        Calendar date = Calendar.getInstance();
+
         try {
             if (checkQR(toXMLGregorianCalendar(date))) {
                 String qrString = createQR();
@@ -218,15 +225,24 @@ public class CheckAttendanceMenu extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
-        Calendar date = Calendar.getInstance();
+        date = Calendar.getInstance();
+        fileName = dateFormat(date);
+        
         try {
-            if (!checkQR(toXMLGregorianCalendar(date))) {          
+            if (!checkQR(toXMLGregorianCalendar(date))) {
                 displayImage();
+            } else {
+                jLabelImage.setText("");
             }
         } catch (DatatypeConfigurationException ex) {
             Logger.getLogger(CheckAttendanceMenu.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_formWindowOpened
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+        jLabelImage.setText("");
+    }//GEN-LAST:event_formWindowClosed
 
     /**
      * @param args the command line arguments
@@ -265,7 +281,7 @@ public class CheckAttendanceMenu extends javax.swing.JFrame {
     }
 
     private void generateQRCodeImage(String QR) {
-        File qrCodeFile = new File("QR Image/QRCode.png");
+        File qrCodeFile = new File("QR Image/" + fileName + ".png");
 
         EncodeConfig encodeConfig
                 = new EncodeConfig.Builder().createDirectories(Boolean.TRUE)
@@ -283,9 +299,14 @@ public class CheckAttendanceMenu extends javax.swing.JFrame {
     }
 
     private void displayImage() {
-        ImageIcon image = new ImageIcon("QR Image/QRCode.png");
+        ImageIcon image = new ImageIcon("QR Image/" + fileName + ".png");
 
         jLabelImage.setIcon(image);
+    }
+
+    private String dateFormat(Calendar c) {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        return sdf.format(c.getTime());
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

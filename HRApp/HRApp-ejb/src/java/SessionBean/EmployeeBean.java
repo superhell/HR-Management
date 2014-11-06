@@ -40,9 +40,20 @@ public class EmployeeBean implements EmployeeBeanLocal {
 
     @Override
     @WebMethod(operationName = "createEmployee")
-    public Boolean createEmployee(String email, String password, String title, String position,
-            String firstName, String middleName, String lastName, Integer age, String contactNum, String department, File photo) {
+    public Boolean createEmployee(
+            @WebParam(name = "userId")String email, 
+            @WebParam(name = "password")String password, 
+            @WebParam(name = "title")String title, 
+            @WebParam(name = "position")String position,
+            @WebParam(name = "firstName")String firstName, 
+            @WebParam(name = "middleName")String middleName, 
+            @WebParam(name = "lastName")String lastName, 
+            @WebParam(name = "age")Integer age, 
+            @WebParam(name = "contactNum")String contactNum, 
+            @WebParam(name = "department")String department, 
+            @WebParam(name = "photo")String photoPath) {
         if (checkEmail(email)) {
+            File photo = new File(photoPath);
             EmployeeEntity newEmployee = new EmployeeEntity(email, password, title, position, firstName, middleName,
                     lastName, age, contactNum, department, photo);
             em.persist(newEmployee);
