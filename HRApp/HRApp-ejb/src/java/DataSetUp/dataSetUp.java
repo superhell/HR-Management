@@ -44,10 +44,10 @@ public class dataSetUp {
     public void createDatabase() {
 
         //employee Entity
-        URL url1 = getClass().getResource("/Resources/1.png");
-        URL url2 = getClass().getResource("/Resources/2.png");
-        URL url3 = getClass().getResource("/Resources/3.png");
-        URL urlSuper = getClass().getResource("/Resources/wangdachui.png");
+        URL url1 = getClass().getResource("/Resources/1.jpg");
+        URL url2 = getClass().getResource("/Resources/2.jpg");
+        URL url3 = getClass().getResource("/Resources/3.jpg");
+        URL urlSuper = getClass().getResource("/Resources/wangdachui.jpg");
         File image1 = null;
         File image2 = null;
         File image3 = null;
