@@ -40,7 +40,7 @@ public class ImageFileView extends FileView {
     ImageIcon jpgIcon = Utils.createImageIcon("images/jpgIcon.gif");
     ImageIcon gifIcon = Utils.createImageIcon("images/gifIcon.gif");
     ImageIcon tiffIcon = Utils.createImageIcon("images/tiffIcon.gif");
-    ImageIcon pngIcon = Utils.createImageIcon("images/pngIcon.png");
+    ImageIcon pngIcon = Utils.createImageIcon("images/pngIcon.jpeg");
 
     public String getName(File f) {
         return null; //let the L&F FileView figure this out

@@ -10,6 +10,8 @@
             <file>file:/Users/dan/Desktop/HR-Management/HRApp/HRApp-ejb/src/java/SessionBean/EmployeeBeanLocal.java</file>
             <file>file:/Users/dan/Desktop/HR-Management/HRApp/HRApp-ejb/src/java/Entity/EmployeeEntity.java</file>
         </group>
-        <group/>
+        <group>
+            <file>file:/Users/hangsun/Desktop/HR-Management/HRApp/HRApp-ejb/src/java/SessionBean/EmployeeBean.java</file>
+        </group>
     </open-files>
 </project-private>

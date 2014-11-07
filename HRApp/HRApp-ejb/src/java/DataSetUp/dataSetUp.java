@@ -44,18 +44,27 @@ public class dataSetUp {
     public void createDatabase() {
 
         //employee Entity
-        URL url = getClass().getResource("/Resources/sample.JPG");
-        File image = null;
+        URL url1 = getClass().getResource("/Resources/1.png");
+        URL url2 = getClass().getResource("/Resources/2.png");
+        URL url3 = getClass().getResource("/Resources/3.png");
+        URL urlSuper = getClass().getResource("/Resources/wangdachui.png");
+        File image1 = null;
+        File image2 = null;
+        File image3 = null;
+        File imageSuper = null;
         try {
-            image = new File(url.toURI());
+            image1 = new File(url1.toURI());
+            image2 = new File(url2.toURI());
+            image3 = new File(url3.toURI());
+            imageSuper = new File(urlSuper.toURI());
         } catch (URISyntaxException ex) {
             Logger.getLogger(dataSetUp.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        EmployeeEntity superUser = new EmployeeEntity("admin", "123", "Mr", "Admin", "Super", "", "Admin", 40, "93727960", "God",image);
-        EmployeeEntity e1 = new EmployeeEntity("e1", "123", "Ms", "Consultant", "EMPLOYEE1", "", "employee1", 25, "12345678", "SOC",image);
-        EmployeeEntity e2 = new EmployeeEntity("e2", "123", "Ms", "Manager", "EMPLOYEE2", "", "employee2", 23, "87654321", "SCI",image);
-        EmployeeEntity e3 = new EmployeeEntity("e3", "123", "Mr", "Entertainment Leader", "EMPLOYEE3", "", "employee3", 21, "12345678", "ENG",image);
+        EmployeeEntity superUser = new EmployeeEntity("admin", "123", "Mr", "Admin", "Super", "", "Admin", 40, "98765432", "God",imageSuper);
+        EmployeeEntity e1 = new EmployeeEntity("e1@is3261.com", "123", "Mr", "Consultant", "Fushuai", "", "Gao", 25, "93727960", "SOC",image1);
+        EmployeeEntity e2 = new EmployeeEntity("e2@is3261.com", "123", "Ms", "Manager", "Fumei", "", "Bai", 23, "87654321", "SCI",image2);
+        EmployeeEntity e3 = new EmployeeEntity("e3@is3261.com", "123", "Mr", "Entertainment Leader", "Feiyuan", "", "TU", 21, "12345678", "ENG",image3);
 
         em.persist(superUser);
         em.flush();
