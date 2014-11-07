@@ -251,25 +251,29 @@ public class CreateNewSalary extends javax.swing.JFrame {
         // TODO add your handling code here:      
         try {
             int selectedRow = jTableAllEmployee.getSelectionModel().getLeadSelectionIndex();
-            EmployeeEntity selectedEmployee = employeeList.get(selectedRow);
-            String email = selectedEmployee.getEmail();
-            String type = (String) jComboBoxSalaryType.getSelectedItem();
-            Double amount = Double.parseDouble(jFormattedTextFieldAmount.getText());
-            String date = jFormattedTextFieldPeriod.getText();
-
-            DateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
-            Date Date = formatter.parse(date);
-            Calendar period = Calendar.getInstance();
-            period.setTime(Date);
-
-            GregorianCalendar gc = new GregorianCalendar();
-            gc.setTimeInMillis(period.getTimeInMillis());
-            XMLGregorianCalendar Period = DatatypeFactory.newInstance().newXMLGregorianCalendar(gc);
-
-            createSalary(email, type, amount, Period);
-            JOptionPane.showMessageDialog(this, "Create Salary Successfully!", "Successful", JOptionPane.INFORMATION_MESSAGE);
             
-            
+            if (selectedRow >= 0) {
+                EmployeeEntity selectedEmployee = employeeList.get(selectedRow);
+                String email = selectedEmployee.getEmail();
+                String type = (String) jComboBoxSalaryType.getSelectedItem();
+                Double amount = Double.parseDouble(jFormattedTextFieldAmount.getText());
+                String date = jFormattedTextFieldPeriod.getText();
+
+                DateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+                Date Date = formatter.parse(date);
+                Calendar period = Calendar.getInstance();
+                period.setTime(Date);
+
+                GregorianCalendar gc = new GregorianCalendar();
+                gc.setTimeInMillis(period.getTimeInMillis());
+                XMLGregorianCalendar Period = DatatypeFactory.newInstance().newXMLGregorianCalendar(gc);
+
+                createSalary(email, type, amount, Period);
+                JOptionPane.showMessageDialog(this, "Create Salary Successfully!", "Successful", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "Please Selecte One Employee!", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+
         } catch (ParseException ex) {
             Logger.getLogger(CreateNewSalary.class.getName()).log(Level.SEVERE, null, ex);
         } catch (DatatypeConfigurationException ex) {

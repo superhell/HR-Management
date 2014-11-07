@@ -6,4 +6,13 @@
     <system systemId="http://localhost:8080/EmployeeBeanService/EmployeeBean?xsd=1" uri="wsdl/localhost_8080/EmployeeBeanService/EmployeeBean.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/SalaryBeanService/SalaryBean?wsdl" uri="wsdl/localhost_8080/SalaryBeanService/SalaryBean.wsdl"/>
     <system systemId="http://localhost:8080/SalaryBeanService/SalaryBean?xsd=1" uri="wsdl/localhost_8080/SalaryBeanService/SalaryBean.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/EventBeanService/EventBean?wsdl" uri="wsdl/localhost_8080/EventBeanService/EventBean.wsdl"/>
+    <system systemId="http://localhost:8080/EventBeanService/EventBean?xsd=1" uri="wsdl/localhost_8080/EventBeanService/EventBean.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/LeaveBeanService/LeaveBean?wsdl" uri="wsdl/localhost_8080/LeaveBeanService/LeaveBean.wsdl"/>
+    <system systemId="http://localhost:8080/LeaveBeanService/LeaveBean?xsd=1" uri="wsdl/localhost_8080/LeaveBeanService/LeaveBean.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/CheckInBeanService/CheckInBean?wsdl" uri="wsdl/localhost_8080/CheckInBeanService/CheckInBean.wsdl"/>
+    <system systemId="http://localhost:8080/CheckInBeanService/CheckInBean?xsd=1" uri="wsdl/localhost_8080/CheckInBeanService/CheckInBean.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/QRBeanService/QRBean?wsdl" uri="wsdl/localhost_8080/QRBeanService/QRBean.wsdl"/>
+    <system systemId="http://localhost:8080/QRBeanService/QRBean?xsd=1" uri="wsdl/localhost_8080/QRBeanService/QRBean.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/EmployeeBeanService/EmployeeBean?xsd=2" uri="wsdl/localhost_8080/EmployeeBeanService/EmployeeBean.xsd_2.xsd"/>
 </catalog>

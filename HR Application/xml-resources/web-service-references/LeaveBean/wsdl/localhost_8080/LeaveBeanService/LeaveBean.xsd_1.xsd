@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://SessionBean/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://SessionBean/">
+
+<xs:element name="createLeave" type="tns:createLeave"/>
+
+<xs:element name="createLeaveResponse" type="tns:createLeaveResponse"/>
+
+<xs:element name="editLeave" type="tns:editLeave"/>
+
+<xs:element name="editLeaveResponse" type="tns:editLeaveResponse"/>
+
+<xs:element name="getAllLeaveRequest" type="tns:getAllLeaveRequest"/>
+
+<xs:element name="getAllLeaveRequestResponse" type="tns:getAllLeaveRequestResponse"/>
+
+<xs:element name="getLeave" type="tns:getLeave"/>
+
+<xs:element name="getLeaveResponse" type="tns:getLeaveResponse"/>
+
+<xs:element name="viewLeaveHistory" type="tns:viewLeaveHistory"/>
+
+<xs:element name="viewLeaveHistoryResponse" type="tns:viewLeaveHistoryResponse"/>
+
+<xs:complexType name="getAllLeaveRequest">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getAllLeaveRequestResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:leaveEntity" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="leaveEntity">
+<xs:sequence>
+<xs:element name="employee" type="tns:employeeEntity" minOccurs="0"/>
+<xs:element name="fromTime" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="generatedDate" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="leaveResult" type="xs:int" minOccurs="0"/>
+<xs:element name="reason" type="xs:string" minOccurs="0"/>
+<xs:element name="toTime" type="xs:dateTime" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="employeeEntity">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="title" type="xs:string" minOccurs="0"/>
+<xs:element name="position" type="xs:string" minOccurs="0"/>
+<xs:element name="firstName" type="xs:string" minOccurs="0"/>
+<xs:element name="middleName" type="xs:string" minOccurs="0"/>
+<xs:element name="lastName" type="xs:string" minOccurs="0"/>
+<xs:element name="age" type="xs:int" minOccurs="0"/>
+<xs:element name="contactNum" type="xs:string" minOccurs="0"/>
+<xs:element name="department" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getLeave">
+<xs:sequence>
+<xs:element name="leaveId" type="xs:long" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getLeaveResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:leaveEntity" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editLeave">
+<xs:sequence>
+<xs:element name="arg0" type="xs:long" minOccurs="0"/>
+<xs:element name="arg1" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editLeaveResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="createLeave">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="fromTime" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="toTime" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="reason" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createLeaveResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="viewLeaveHistory">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="viewLeaveHistoryResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:leaveEntity" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

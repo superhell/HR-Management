@@ -5,11 +5,32 @@
  */
 package hr.application;
 
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
+import com.google.zxing.qrcode.decoder.Mode;
+import eg.com.tm.barcode.processor.BarcodeEngine;
+import eg.com.tm.barcode.processor.config.EncodeConfig;
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
+
 /**
  *
  * @author hangsun
  */
 public class CheckAttendanceMenu extends javax.swing.JFrame {
+
+    Calendar date = null;
+    String fileName = null;
 
     /**
      * Creates new form CheckAttendance
@@ -27,21 +48,201 @@ public class CheckAttendanceMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jButtonGoBack = new javax.swing.JButton();
+        jButtonGenerateQRCode = new javax.swing.JButton();
+        jButtonViewEmployeeList = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jLabelImage = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
+
+        jPanel2.setBackground(new java.awt.Color(72, 117, 180));
+
+        jLabel1.setFont(new java.awt.Font("Times", 3, 36)); // NOI18N
+        jLabel1.setText("               HR Management");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 563, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jButtonGoBack.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonGoBack.setFont(new java.awt.Font("Times", 3, 18)); // NOI18N
+        jButtonGoBack.setText("Go Back");
+        jButtonGoBack.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButtonGoBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonGoBackActionPerformed(evt);
+            }
+        });
+
+        jButtonGenerateQRCode.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonGenerateQRCode.setFont(new java.awt.Font("Times", 3, 18)); // NOI18N
+        jButtonGenerateQRCode.setText("Generate QR Code ");
+        jButtonGenerateQRCode.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButtonGenerateQRCode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonGenerateQRCodeActionPerformed(evt);
+            }
+        });
+
+        jButtonViewEmployeeList.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonViewEmployeeList.setFont(new java.awt.Font("Times", 3, 18)); // NOI18N
+        jButtonViewEmployeeList.setText("View Employee Attendance");
+        jButtonViewEmployeeList.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButtonViewEmployeeList.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonViewEmployeeListActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButtonGoBack, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButtonViewEmployeeList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonGenerateQRCode, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jButtonGoBack)
+                .addGap(53, 53, 53)
+                .addComponent(jButtonGenerateQRCode, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(69, 69, 69)
+                .addComponent(jButtonViewEmployeeList, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabelImage.setFont(new java.awt.Font("Times", 3, 18)); // NOI18N
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addComponent(jLabelImage, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(87, 87, 87)
+                .addComponent(jLabelImage, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(81, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonGoBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGoBackActionPerformed
+        // TODO add your handling code here:
+        Menu menu = new Menu();
+        menu.setVisible(true);
+        menu.setExtendedState(JFrame.NORMAL);
+        this.setVisible(false);
+        this.dispose();
+    }//GEN-LAST:event_jButtonGoBackActionPerformed
+
+    private void jButtonGenerateQRCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGenerateQRCodeActionPerformed
+        // TODO add your handling code here:
+
+        try {
+            if (checkQR(toXMLGregorianCalendar(date))) {
+                String qrString = createQR();
+                generateQRCodeImage(qrString);
+                displayImage();
+                JOptionPane.showMessageDialog(this, "Create QR Successfully!", "Successful", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "Already Create QR Today!", "Error", JOptionPane.ERROR_MESSAGE);
+
+            }
+        } catch (DatatypeConfigurationException ex) {
+            Logger.getLogger(CheckAttendanceMenu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_jButtonGenerateQRCodeActionPerformed
+
+    private void jButtonViewEmployeeListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonViewEmployeeListActionPerformed
+        // TODO add your handling code here:
+        CheckAttendanceEmployeeList list = new CheckAttendanceEmployeeList();
+        list.setVisible(true);
+        list.setExtendedState(JFrame.NORMAL);
+        this.setVisible(false);
+        this.dispose();
+    }//GEN-LAST:event_jButtonViewEmployeeListActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        date = Calendar.getInstance();
+        fileName = dateFormat(date);
+        
+        try {
+            if (!checkQR(toXMLGregorianCalendar(date))) {
+                displayImage();
+            } else {
+                jLabelImage.setText("");
+            }
+        } catch (DatatypeConfigurationException ex) {
+            Logger.getLogger(CheckAttendanceMenu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_formWindowOpened
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+        jLabelImage.setText("");
+    }//GEN-LAST:event_formWindowClosed
 
     /**
      * @param args the command line arguments
@@ -79,6 +280,69 @@ public class CheckAttendanceMenu extends javax.swing.JFrame {
         });
     }
 
+    private void generateQRCodeImage(String QR) {
+        File qrCodeFile = new File("QR Image/" + fileName + ".png");
+
+        EncodeConfig encodeConfig
+                = new EncodeConfig.Builder().createDirectories(Boolean.TRUE)
+                .isQRCodeFormat(Boolean.TRUE)
+                .withErrorCorrLevel(ErrorCorrectionLevel.M).build();
+
+        String content = QR;
+
+        BarcodeEngine.encode(qrCodeFile, content, BarcodeFormat.QR_CODE, 200, 200, encodeConfig);
+
+        encodeConfig
+                = new EncodeConfig.Builder().createDirectories(Boolean.TRUE).
+                withCharactersMode(Mode.ALPHANUMERIC).build();
+
+    }
+
+    private void displayImage() {
+        ImageIcon image = new ImageIcon("QR Image/" + fileName + ".png");
+
+        jLabelImage.setIcon(image);
+    }
+
+    private String dateFormat(Calendar c) {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        return sdf.format(c.getTime());
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonGenerateQRCode;
+    private javax.swing.JButton jButtonGoBack;
+    private javax.swing.JButton jButtonViewEmployeeList;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabelImage;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
+
+    private static String createQR() {
+        sessionbean.QRBeanService service = new sessionbean.QRBeanService();
+        sessionbean.QRBean port = service.getQRBeanPort();
+        return port.createQR();
+    }
+
+    private static Boolean checkQR(javax.xml.datatype.XMLGregorianCalendar arg0) {
+        sessionbean.QRBeanService service = new sessionbean.QRBeanService();
+        sessionbean.QRBean port = service.getQRBeanPort();
+        return port.checkQR(arg0);
+    }
+
+    private static XMLGregorianCalendar toXMLGregorianCalendar(Calendar c)
+            throws DatatypeConfigurationException {
+        GregorianCalendar gc = new GregorianCalendar();
+        gc.setTimeInMillis(c.getTimeInMillis());
+        XMLGregorianCalendar xc = DatatypeFactory.newInstance().newXMLGregorianCalendar(gc);
+        return xc;
+    }
+
+    private static String getTodayQR(javax.xml.datatype.XMLGregorianCalendar arg0) {
+        sessionbean.QRBeanService service = new sessionbean.QRBeanService();
+        sessionbean.QRBean port = service.getQRBeanPort();
+        return port.getTodayQR(arg0);
+    }
 }

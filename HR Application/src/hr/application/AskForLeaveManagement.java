@@ -5,11 +5,27 @@
  */
 package hr.application;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.List;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.XMLGregorianCalendar;
+import sessionbean.EmployeeEntity;
+import sessionbean.LeaveEntity;
+
 /**
  *
  * @author hangsun
  */
 public class AskForLeaveManagement extends javax.swing.JFrame {
+
+    private List<LeaveEntity> leaveList = null;
 
     /**
      * Creates new form AskForLeaveManagement
@@ -27,21 +43,187 @@ public class AskForLeaveManagement extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTableLeaveList = new javax.swing.JTable();
+        jPanel3 = new javax.swing.JPanel();
+        jButtonAccept = new javax.swing.JButton();
+        jButtonReject = new javax.swing.JButton();
+        jButtonGoBack = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
+
+        jPanel2.setBackground(new java.awt.Color(72, 117, 180));
+
+        jLabel1.setFont(new java.awt.Font("Times", 3, 36)); // NOI18N
+        jLabel1.setText("                                  HR Management");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 840, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
+        );
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jTableLeaveList.setFont(new java.awt.Font("Times", 3, 10)); // NOI18N
+        jTableLeaveList.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Leave ID", "Employee Name", "Start Time", "End Time", "Reason", "Generated Date"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Long.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTableLeaveList);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+        );
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
+        jButtonAccept.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonAccept.setFont(new java.awt.Font("Times", 3, 24)); // NOI18N
+        jButtonAccept.setText("Accept");
+        jButtonAccept.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButtonAccept.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAcceptActionPerformed(evt);
+            }
+        });
+
+        jButtonReject.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonReject.setFont(new java.awt.Font("Times", 3, 24)); // NOI18N
+        jButtonReject.setText("Reject");
+        jButtonReject.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButtonReject.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRejectActionPerformed(evt);
+            }
+        });
+
+        jButtonGoBack.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonGoBack.setFont(new java.awt.Font("Times", 3, 18)); // NOI18N
+        jButtonGoBack.setText("Go Back");
+        jButtonGoBack.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButtonGoBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonGoBackActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButtonGoBack, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButtonAccept, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+                    .addComponent(jButtonReject, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jButtonGoBack)
+                .addGap(73, 73, 73)
+                .addComponent(jButtonAccept, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(63, 63, 63)
+                .addComponent(jButtonReject, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(73, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonGoBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGoBackActionPerformed
+        // TODO add your handling code here:
+        Menu menu = new Menu();
+        menu.setVisible(true);
+        menu.setExtendedState(JFrame.NORMAL);
+        this.setVisible(false);
+        this.dispose();
+    }//GEN-LAST:event_jButtonGoBackActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        loadTable();
+    }//GEN-LAST:event_formWindowOpened
+
+    private void jButtonAcceptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAcceptActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = jTableLeaveList.getSelectionModel().getLeadSelectionIndex();
+        LeaveEntity leave = leaveList.get(selectedRow);
+        Long leaveId = leave.getId();
+        editLeave(leaveId, 1);
+        JOptionPane.showMessageDialog(this, "Accept!", "Successful", JOptionPane.INFORMATION_MESSAGE);
+        loadTable();
+    }//GEN-LAST:event_jButtonAcceptActionPerformed
+
+    private void jButtonRejectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRejectActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = jTableLeaveList.getSelectionModel().getLeadSelectionIndex();
+        LeaveEntity leave = leaveList.get(selectedRow);
+        Long leaveId = leave.getId();
+        editLeave(leaveId, -1);
+        JOptionPane.showMessageDialog(this, "Reject!", "Successful", JOptionPane.INFORMATION_MESSAGE);
+        loadTable();
+    }//GEN-LAST:event_jButtonRejectActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,6 +260,102 @@ public class AskForLeaveManagement extends javax.swing.JFrame {
         });
     }
 
+    private void loadTable() {
+        try {
+            leaveList = getAllLeaveRequest();
+            if (leaveList != null && leaveList.size() > 0) {
+                Object[][] data = new Object[leaveList.size()][6];
+
+                for (int i = 0; i < leaveList.size(); i++) {
+                    LeaveEntity leave = leaveList.get(i);
+                    data[i][0] = leave.getId();
+                    String firstName = leave.getEmployee().getFirstName();
+                    String lastName = leave.getEmployee().getLastName();
+                    String fullName = firstName + " " + lastName;
+                    
+                    Calendar fromTime = fromXMLGregorianCalendar(leave.getFromTime());
+                    Calendar toTime = fromXMLGregorianCalendar(leave.getToTime());
+                    Calendar generatedDate = fromXMLGregorianCalendar(leave.getGeneratedDate());
+                    SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                    SimpleDateFormat sdf2 = new SimpleDateFormat("dd/MM/yyyy");
+                    
+                    data[i][1] = fullName;
+                    data[i][2] = sdf1.format(fromTime.getTime());
+                    data[i][3] = sdf1.format(toTime.getTime());
+                    data[i][4] = leave.getReason();
+                    data[i][5] = sdf2.format(generatedDate.getTime());
+                }
+
+                Object[] columnNames = new Object[6];
+
+                columnNames[0] = "Leave ID";
+                columnNames[1] = "Employee Name";
+                columnNames[2] = "Start Time";
+                columnNames[3] = "End Time";
+                columnNames[4] = "Reason";
+                columnNames[5] = "Generated Date";
+
+                TableModel tableModel = new DefaultTableModel(data, columnNames);
+                jTableLeaveList.setModel(tableModel);
+                jTableLeaveList.getSelectionModel().addListSelectionListener(new RowListener());
+            } else {
+                Object[] columnNames = new Object[6];
+
+                columnNames[0] = "Leave ID";
+                columnNames[1] = "Employee Name";
+                columnNames[2] = "Start Time";
+                columnNames[3] = "End Time";
+                columnNames[4] = "Reason";
+                columnNames[5] = "Generated Date";
+
+                Object[][] data = new Object[1][6];
+
+                TableModel tableModel = new DefaultTableModel(data, columnNames);
+                jTableLeaveList.setModel(tableModel);
+                jTableLeaveList.getSelectionModel().addListSelectionListener(new RowListener());
+            }
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "An unknown error has occurred: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private class RowListener implements ListSelectionListener {
+
+        public void valueChanged(ListSelectionEvent event) {
+            if (event.getValueIsAdjusting()) {
+                return;
+            }
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonAccept;
+    private javax.swing.JButton jButtonGoBack;
+    private javax.swing.JButton jButtonReject;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTableLeaveList;
     // End of variables declaration//GEN-END:variables
+
+    private static java.util.List<sessionbean.LeaveEntity> getAllLeaveRequest() {
+        sessionbean.LeaveBeanService service = new sessionbean.LeaveBeanService();
+        sessionbean.LeaveBean port = service.getLeaveBeanPort();
+        return port.getAllLeaveRequest();
+    }
+
+    private static void editLeave(java.lang.Long arg0, java.lang.Integer arg1) {
+        sessionbean.LeaveBeanService service = new sessionbean.LeaveBeanService();
+        sessionbean.LeaveBean port = service.getLeaveBeanPort();
+        port.editLeave(arg0, arg1);
+    }
+    
+    private static Calendar fromXMLGregorianCalendar(XMLGregorianCalendar xc)
+            throws DatatypeConfigurationException {
+        Calendar c = Calendar.getInstance();
+        c.setTimeInMillis(xc.toGregorianCalendar().getTimeInMillis());
+        return c;
+    }
 }

@@ -74,7 +74,7 @@ public class Menu extends javax.swing.JFrame {
 
         jButtonNewSalary.setBackground(new java.awt.Color(255, 255, 255));
         jButtonNewSalary.setFont(new java.awt.Font("Times", 3, 18)); // NOI18N
-        jButtonNewSalary.setText("Create Salary For Specific Employee");
+        jButtonNewSalary.setText("Salary Management");
         jButtonNewSalary.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButtonNewSalary.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,7 +94,7 @@ public class Menu extends javax.swing.JFrame {
 
         jButtonCheckAttendance.setBackground(new java.awt.Color(255, 255, 255));
         jButtonCheckAttendance.setFont(new java.awt.Font("Times", 3, 18)); // NOI18N
-        jButtonCheckAttendance.setText("Check Attendance For Specific Employee");
+        jButtonCheckAttendance.setText("Attendance Management");
         jButtonCheckAttendance.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButtonCheckAttendance.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,7 +104,7 @@ public class Menu extends javax.swing.JFrame {
 
         jButtonNewEvent.setBackground(new java.awt.Color(255, 255, 255));
         jButtonNewEvent.setFont(new java.awt.Font("Times", 3, 18)); // NOI18N
-        jButtonNewEvent.setText("Create New Event");
+        jButtonNewEvent.setText("Event Management");
         jButtonNewEvent.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButtonNewEvent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -145,9 +145,8 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jButtonNewAccount, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonNewEvent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonAskForLeave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(jButtonLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addComponent(jButtonLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
