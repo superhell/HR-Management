@@ -177,17 +177,10 @@ public class EmployeeBean implements EmployeeBeanLocal {
     
     @WebMethod(operationName = "getContacts")
     @Override
-    public String[][] getContacts(){
+    public List<EmployeeEntity> getContacts(){
         Query q = em.createQuery("SELECT e FROM EmployeeEntity e");
-        List<EmployeeEntity> employeeList = new ArrayList();
-        String [][] contacts = new String[q.getResultList().size()][2];
-        int i=0;
-        for (Object o : q.getResultList()) {
-            EmployeeEntity employee = (EmployeeEntity) o;
-            contacts[0][0] = employee.getFirstName()+" "+employee.getLastName();
-            contacts[i][1] = employee.getContactNum();
-            i++;
-        }
-        return contacts;
+        List<EmployeeEntity> employeeList = q.getResultList();
+        
+        return employeeList;
     }
 }

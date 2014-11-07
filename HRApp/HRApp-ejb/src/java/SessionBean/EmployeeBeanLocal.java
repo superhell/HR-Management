@@ -7,6 +7,7 @@ package SessionBean;
 
 import Entity.EmployeeEntity;
 import java.io.File;
+import java.util.List;
 import javax.ejb.Local;
 
 /**
@@ -27,5 +28,5 @@ public interface EmployeeBeanLocal {
     
     public String getEmployeeImage(File imageFile);
     
-    public String[][] getContacts();
+    public List<EmployeeEntity> getContacts();
 }
