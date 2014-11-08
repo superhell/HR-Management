@@ -139,10 +139,28 @@ public class dataSetUp {
         c4.set(2014, Calendar.DECEMBER, 1, 17, 0, 0);
         Calendar c5 = Calendar.getInstance();
         c5.set(2014, Calendar.DECEMBER, 1, 19, 0, 0);
+        Calendar c14 = Calendar.getInstance();
+        c14.set(2014, Calendar.OCTOBER, 25, 8, 0, 0);
+        Calendar c15 = Calendar.getInstance();
+        c15.set(2014, Calendar.OCTOBER, 27, 19, 0, 0);
+        Calendar c16 = Calendar.getInstance();
+        c16.set(2014, Calendar.NOVEMBER, 9, 8, 0, 0);
+        Calendar c17 = Calendar.getInstance();
+        c17.set(2014, Calendar.NOVEMBER, 10, 8, 0, 0);
 
-        EventEntity event1 = new EventEntity(c4, c5, "exam", "SOC or MPSH", "IS3261 Exam");
+        EventEntity event1 = new EventEntity(c4, c5, "Meeting", "SOC or MPSH", "IS3261 Meet with BOSS!");
+        EventEntity event2 = new EventEntity(c14, c15, "Training", "SOC or MPSH", "IS3261 Meet with BOSS!");
+        EventEntity event3 = new EventEntity(c16, c17, "On duty", "SOC or MPSH", "IS3261 Meet with BOSS!");
+        EventEntity event4 = new EventEntity(c16, c17, "On duty2", "SOC or MPSH", "IS3261 Meet with BOSS!");
+        
 
         em.persist(event1);
+        em.flush();
+        em.persist(event2);
+        em.flush();
+        em.persist(event3);
+        em.flush(); 
+        em.persist(event4);
         em.flush();
 
         //leaveEntity

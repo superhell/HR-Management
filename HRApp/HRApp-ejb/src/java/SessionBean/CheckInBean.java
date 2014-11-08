@@ -47,13 +47,15 @@ public class CheckInBean implements CheckInBeanLocal {
         Calendar checkInTime = Calendar.getInstance();
         Integer hour = checkInTime.get(Calendar.HOUR_OF_DAY);
         String todayQR = getTodayQR(checkInTime);
-
+        System.out.println("todayQR: " + todayQR);
+        System.out.println("QR: "+ QR);
+        
         if (!todayQR.equals(QR)) {
-            return 2;
+            return 2; //wrong qr
         }
         
         if(!checkInAvailablity(email,checkInTime)){
-           return 3;
+           return 3;//check whether already checked in
         }
 
         if (hour <= 9 && hour >= 7) {
@@ -67,9 +69,9 @@ public class CheckInBean implements CheckInBeanLocal {
             employee.setCheckInList(checkInList);
             em.persist(employee);
             em.flush();
-            return 1;
+            return 1; //successful
         } else {
-            return 4;
+            return 4;//wrong time
         }
 
     }

@@ -56,9 +56,11 @@ public class CreateNewEvent extends javax.swing.JFrame {
         jTextAreaDescription = new javax.swing.JTextArea();
         jButtonCreate = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        jFormattedTextFieldEventDate = new javax.swing.JFormattedTextField();
+        jFormattedTextFieldStartDate = new javax.swing.JFormattedTextField();
         jComboBoxStartTime = new javax.swing.JComboBox();
         jComboBoxEndTime = new javax.swing.JComboBox();
+        jLabelEndDate = new javax.swing.JLabel();
+        jFormattedTextFieldEndDate = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -137,13 +139,13 @@ public class CreateNewEvent extends javax.swing.JFrame {
         });
 
         jLabel7.setFont(new java.awt.Font("Times", 3, 18)); // NOI18N
-        jLabel7.setText("Event Date:");
+        jLabel7.setText("Start Date:");
 
-        jFormattedTextFieldEventDate.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd-MM-yyyy"))));
-        jFormattedTextFieldEventDate.setFont(new java.awt.Font("Times", 3, 18)); // NOI18N
-        jFormattedTextFieldEventDate.addActionListener(new java.awt.event.ActionListener() {
+        jFormattedTextFieldStartDate.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd-MM-yyyy"))));
+        jFormattedTextFieldStartDate.setFont(new java.awt.Font("Times", 3, 18)); // NOI18N
+        jFormattedTextFieldStartDate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextFieldEventDateActionPerformed(evt);
+                jFormattedTextFieldStartDateActionPerformed(evt);
             }
         });
 
@@ -162,6 +164,12 @@ public class CreateNewEvent extends javax.swing.JFrame {
                 jComboBoxEndTimeActionPerformed(evt);
             }
         });
+
+        jLabelEndDate.setFont(new java.awt.Font("Times", 3, 18)); // NOI18N
+        jLabelEndDate.setText("End Date: ");
+
+        jFormattedTextFieldEndDate.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd-MM-yyyy"))));
+        jFormattedTextFieldEndDate.setFont(new java.awt.Font("Times", 3, 18)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -183,13 +191,17 @@ public class CreateNewEvent extends javax.swing.JFrame {
                                     .addComponent(jLabel7)
                                     .addComponent(jLabel2)
                                     .addComponent(jLabel3))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabelEndDate)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jFormattedTextFieldEventDate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jFormattedTextFieldStartDate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextFieldVenue, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBoxStartTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBoxEndTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonCreate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButtonCreate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jFormattedTextFieldEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(12, 12, 12)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(27, 27, 27))
@@ -220,13 +232,17 @@ public class CreateNewEvent extends javax.swing.JFrame {
                             .addComponent(jTextFieldVenue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jFormattedTextFieldEventDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jFormattedTextFieldStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7))
-                        .addGap(28, 28, 28)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabelEndDate)
+                            .addComponent(jFormattedTextFieldEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
                             .addComponent(jComboBoxStartTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
                             .addComponent(jComboBoxEndTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -267,9 +283,9 @@ public class CreateNewEvent extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldEventNameActionPerformed
 
-    private void jFormattedTextFieldEventDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldEventDateActionPerformed
+    private void jFormattedTextFieldStartDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldStartDateActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextFieldEventDateActionPerformed
+    }//GEN-LAST:event_jFormattedTextFieldStartDateActionPerformed
 
     private void jComboBoxStartTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxStartTimeActionPerformed
         // TODO add your handling code here:
@@ -289,16 +305,18 @@ public class CreateNewEvent extends javax.swing.JFrame {
             String eventName = jTextFieldEventName.getText();
             String eventVenue = jTextFieldVenue.getText();
             String eventDescription = jTextAreaDescription.getText();
-            String eventDate = jFormattedTextFieldEventDate.getText();
+            String startDate = jFormattedTextFieldStartDate.getText();
+            String endDate = jFormattedTextFieldEndDate.getText();
             String startTime = (String) jComboBoxStartTime.getSelectedItem();
             String endTime = (String) jComboBoxEndTime.getSelectedItem();
 
-            if (eventName == null || eventVenue == null || eventDescription == null || eventDate == null) {
+            if (eventName == null || eventVenue == null || eventDescription == null || startDate == null || endDate == null) {
                 JOptionPane.showMessageDialog(this, "All Field Must Not Be Empty!", "Creation Error", JOptionPane.ERROR_MESSAGE);
             } else {
                 DateFormat formatter1 = new SimpleDateFormat("dd-MM-yyyy");
                 DateFormat formatter2 = new SimpleDateFormat("HH:mm:ss");
-                Date Date1 = formatter1.parse(eventDate);
+                Date Date1 = formatter1.parse(startDate);
+                Date Date2 = formatter1.parse(endDate);
                 Date start = formatter2.parse(startTime);
                 Date end = formatter2.parse(endTime);
                 
@@ -319,7 +337,7 @@ public class CreateNewEvent extends javax.swing.JFrame {
                 StartTime.set(Calendar.MINUTE, startMin);
                 StartTime.set(Calendar.SECOND, startSecond);
                 Calendar EndTime = Calendar.getInstance();
-                EndTime.setTime(Date1);
+                EndTime.setTime(Date2);
                 EndTime.set(Calendar.HOUR_OF_DAY, endHour);
                 EndTime.set(Calendar.MINUTE, endMin);
                 EndTime.set(Calendar.SECOND, endSecond);
@@ -383,7 +401,8 @@ public class CreateNewEvent extends javax.swing.JFrame {
     private javax.swing.JButton jButtonGoBack;
     private javax.swing.JComboBox jComboBoxEndTime;
     private javax.swing.JComboBox jComboBoxStartTime;
-    private javax.swing.JFormattedTextField jFormattedTextFieldEventDate;
+    private javax.swing.JFormattedTextField jFormattedTextFieldEndDate;
+    private javax.swing.JFormattedTextField jFormattedTextFieldStartDate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -391,6 +410,7 @@ public class CreateNewEvent extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabelEndDate;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
